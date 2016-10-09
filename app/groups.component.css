@@ -1,0 +1,11 @@
+td {
+    border: 1px solid black;
+}
+
+tr:hover, tr.selected {
+    background-color: #CCCCCC;
+}
+
+tr.joined {
+    background-color: #AAAAAA !important;
+}

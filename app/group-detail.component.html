@@ -1,0 +1,28 @@
+<div *ngIf="group">
+    <h1>{{group.name}}</h1>
+
+    <div *ngIf="!mySessionsService.has(group)">
+        <input [(ngModel)]="sessionName" placeholder="name"/>
+        <button (click)="join(group)">Join</button>
+    </div>
+    <div *ngIf="mySessionsService.has(group)">
+        <div *ngIf="!mySessionsService.smoekRequested(group)">
+            <button (click)="smoek(group)">SMØK</button>
+        </div>
+        <div *ngIf="mySessionsService.smoekRequested(group)">
+            <div *ngIf="group.status.confirmed">
+                <button disabled>SMØK already confirmed</button>
+            </div>
+            <div *ngIf="!group.status.confirmed">
+                <button (click)="unsmoek(group)">unSMØK</button>
+            </div>
+        </div>
+        <button (click)="leave(group, mySessionsService.get(group))">Leave</button>
+    </div>
+
+    <ul>
+        <li *ngFor="let session of group.sessions">
+            {{session.name}}
+        </li>
+    </ul>
+</div>

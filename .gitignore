@@ -1,0 +1,12 @@
+!.gitkeep
+
+# Compiled Typescript files
+/app/*.js
+/app/*.js.map
+
+# Dependencies
+/typings/
+/node_modules/
+
+# IDE
+/.idea
