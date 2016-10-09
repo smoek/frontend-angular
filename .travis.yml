@@ -17,4 +17,4 @@ before_install:
   - export DISPLAY=:99.0
   - sh -e /etc/init.d/xvfb start
 
-script: npm test-once
+script: npm run test-once
