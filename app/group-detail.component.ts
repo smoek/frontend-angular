@@ -47,7 +47,7 @@ export class GroupDetailComponent {
             });
     }
 
-    unsmoek(group: Group, session: Session) {
+    unsmoek(group: Group) {
         const session = this.mySessionsService.get(group);
         this.smoekService.unsmoke(group, session)
             .then(smoekStatus => {
